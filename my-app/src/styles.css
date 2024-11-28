@@ -59,7 +59,10 @@
 
   .game-board {
     display: flexbox;
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: #a9ffbf;
     border-radius: 20px;
   }
@@ -86,7 +89,7 @@
   .square {
     aspect-ratio: 1;
     background: #fff;
-    border: 2px solid #999;
+    border: 2px solid #35b064;
     font-size: 40px;
     font-weight: bold;
     line-height: 34px;
@@ -109,12 +112,65 @@
     display: flex;
     flex-direction: row;
   }
-  
-  .status {
+
+  .x-status {
     padding: 10px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     font-weight: 1000;
+    border-radius: 10px;
+    border-color: #35b064;
+    border-style: outset;
+    border-width: 5px;
+    margin-bottom: 10px;
+    background-color: #ffe0e9;
+  }
+
+  .o-status {
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    font-weight: 1000;
+    border-radius: 10px;
+    border-color: #35b064;
+    border-style: outset;
+    border-width: 5px;
+    margin-bottom: 10px;
+    background-color: #d4dcff;
+  }
+
+  .win-status-x {
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    font-weight: 1000;
+    border-radius: 10px;
+    border-color: #d8636f;
+    color: #760a0a;
+    border-style: groove;
+    border-width: 5px;
+    margin-bottom: 10px;
+    animation: tada;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: #ffe0e9;
+  }
+
+  .win-status-o {
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    font-weight: 1000;
+    border-radius: 10px;
+    border-color: #735ed1;
+    color: #3b1a69;
+    border-style: groove;
+    border-width: 5px;
+    margin-bottom: 10px;
+    animation: tada;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: #d4dcff;
   }
 
   .game {
@@ -125,5 +181,26 @@
   
   .game-info {
     margin-right: 10px;
+    margin-top: 10px;
+    color: #35b064;
+    font-size: large;
+    font-weight: 1000;
+    background-color: #f2fff4;
+    border-radius: 10px;
+    border-style: dashed;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .game-button {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    background-color: #d7ffe1;
+    border-radius: 20px;
+    margin-top: 5px;
+  }
+
+  .game-button:hover {
+    background-color: #7ff1ab;
   }
   

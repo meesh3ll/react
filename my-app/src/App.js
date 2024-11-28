@@ -58,9 +58,17 @@ function Board({ xIsNext, squares, onPlay }) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
+  var statusDesign;
+  if (!winner) {
+    statusDesign = xIsNext ? 'x-status' : 'o-status';
+  }
+  else {
+    statusDesign = winner === 'X' ? 'win-status-x' : 'win-status-o';
+  }
+
   return (
     <>
-      <div className="status">{status}</div>
+      <div className={statusDesign}>{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} xIsNext = {xIsNext} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} xIsNext = {xIsNext}/>
@@ -105,7 +113,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className = "game-button" onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
