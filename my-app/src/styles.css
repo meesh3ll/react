@@ -1,3 +1,5 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+
 * {
     box-sizing: border-box;
   }
@@ -53,32 +55,66 @@
   body {
     font-family: sans-serif;
     margin: 20px;
-    padding: 0;
   }
 
   .game-board {
-    
-    background: #2f2f;
+    display: flexbox;
+    padding: 50px;
+    background: #a9ffbf;
+    border-radius: 20px;
+  }
+
+  .x-design {
+    color: #ff6383;
+    aspect-ratio: 1; 
+    font-size: 40px;
+    font-weight:bold;
+    height: 50px;
+    animation: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  .o-design {
+    color: #8863ff;
+    aspect-ratio: 1; 
+    font-size: 40px;
+    font-weight:bold;
+    animation: fadeIn;
+    animation-duration: 0.5s;
   }
 
   .square {
-    aspect-ratio: 1; 
+    aspect-ratio: 1;
     background: #fff;
-    border: 1px solid #999;
+    border: 2px solid #999;
     font-size: 40px;
-    font-weight:bold;
+    font-weight: bold;
     line-height: 34px;
     height: 50px;
   }
 
+  .x-hover:hover {
+    background-color: #ffe0e9;
+  }
+
+  .o-hover:hover {
+    background-color: #d4dcff;
+  }
+
+  .empty-hover:hover {
+    background-color: #f0f0f0;
+  }
+
   .board-row {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
   }
   
   .status {
-    margin-bottom: 10px;
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    font-weight: 1000;
   }
 
   .game {

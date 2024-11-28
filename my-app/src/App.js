@@ -2,13 +2,34 @@
 import './App.css';
 import {useState} from 'react';
 
-function Square({value, onSquareClick}) {
+function Square({value, onSquareClick, xIsNext}) {
+  var valueDesign; // customize the colors of x and o
+  if (value === 'X') {
+    valueDesign = 'x-design';
+  }
+  else if (value === 'O') {
+    valueDesign = 'o-design';
+  }
+
+  var hoverDesign; // customize hovering
+  if (value === 'X' || value == 'O'){
+    hoverDesign = null;
+  }
+  else {
+    if (xIsNext) {
+      hoverDesign = 'x-hover';
+    }
+    else {
+      hoverDesign = 'o-hover';
+    }
+  }
+
   return (
     <button 
-      className = "square"
+      className = {`square ${hoverDesign}`}
       onClick = {onSquareClick}
     >
-      {value}
+      <span className = {valueDesign}>{value}</span>
     </button>
   );
 }
@@ -41,19 +62,19 @@ function Board({ xIsNext, squares, onPlay }) {
     <>
       <div className="status">{status}</div>
       <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} xIsNext = {xIsNext} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} xIsNext = {xIsNext}/>
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} xIsNext = {xIsNext}/>
       </div>
       <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} xIsNext = {xIsNext}/>
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} xIsNext = {xIsNext}/>
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} xIsNext = {xIsNext}/>
       </div>
       <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} xIsNext = {xIsNext}/>
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} xIsNext = {xIsNext}/>
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} xIsNext = {xIsNext}/>
       </div>
     </>
   );
